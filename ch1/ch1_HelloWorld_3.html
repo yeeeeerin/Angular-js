@@ -1,0 +1,23 @@
+<!-- 자 숫자,문자열(string),객체(object),배열(array) 한번에 봅시다 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+</head>
+<body>
+<!-- ng-init 지시자는 AngularJS 어플리케이션의 값들을 초기화한다 -->
+	<div ng-app ng-init = "days = 30; cost = 1250; 
+	client = {firstname:'이',lastname:'예린',num:01049392154};
+	month=[1,2,3,4,5,6,7,8,9,10,11,12]">
+		
+		<p>{{month[5]}}월 사용내역</p> <!-- <문제>html에는 month[7]은 어떻게 나타날까요?? -->
+		<p>안녕하세요 {{client.firstname + "  " + client.lastname}}님!</p>
+		<p>교통비 : {{cost * days}}</p> <!-- 연산도 가능하다-->
+		<p>폰번호 : {{client.num}}</p>
+
+	</div>
+
+</body>
+</html>
