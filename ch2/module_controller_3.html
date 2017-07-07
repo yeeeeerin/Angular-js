@@ -1,0 +1,80 @@
+
+
+
+
+
+
+<!-- 컨트롤러 심화 -->
+
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	 <meta charset="utf-8">
+	 <title>컨트롤러심화베이베</title>
+
+	 <script>
+
+	 /*
+	 app 하나에 컨트롤러가 3개나...???!!!
+	 그렇습니다.
+	 app하나에 컨트롤러를 여러개 넣을수도 있어요
+	 java로 치면 main클래스에 메소드가 여러개 있는 것과 같은 원리이지요
+	  */
+	  	
+	  	var app = angular.module('myApp', []);
+
+		app.controller('Controller0', function($scope,sharedService) {
+		 	$scope.sharedService = sharedService;
+		    
+		 	$scope.handleClick = function() {
+		    
+		   	sharedService.sharingMessage = sharedService.messageToShare;
+		  };
+		});
+
+		app.controller('Controller1', function($scope,sharedService) {
+		  $scope.sharedService = sharedService;
+		});
+
+		app.controller('Controller2', function($scope,sharedService) {
+		  $scope.sharedService = sharedService;
+		});
+
+		/*
+		factory : 객체나 변수를 반환하는 역할
+		 */
+		app.factory('sharedService', function() {
+		    var shared = {};
+		    shared.messageToShare = '';
+		    shared.sharingMessage = '';
+		   
+		    return shared;
+		});
+
+	 </script>
+</head>
+<body>
+
+	<h3>communication between controllers, new way</h3>
+	<div ng-controller="Controller0">
+					<!-- Controller0에 있는 sharedService.messageToShare 변수를 사용하겠다! -->
+	    Controller0 :<input ng-model="sharedService.messageToShare" >
+	    <button ng-click="handleClick();">share</button>
+	    <!-- ng-click 버튼클릭 이벤트 -->
+	</div>
+
+	<!-- Controller1 -->
+	<div ng-controller="Controller1">
+					<!-- Controller1에 있는 sharedService.sharingMessage 변수를 사용하겠다! -->
+	    Controller1 :<input ng-model="sharedService.sharingMessage" >
+	</div>
+
+	<div ng-controller="Controller2">
+					<!-- Controller2에 있는 sharedService.sharingMessage 변수를 사용하겠다! -->
+	    Controller2 :<input ng-model="sharedService.sharingMessage" >
+	</div>
+
+  
+</body>
+</html>

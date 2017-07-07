@@ -1,0 +1,55 @@
+
+
+
+
+
+<!-- 자! 마지막으로 상속에 대해 배워봅시다! -->
+
+
+ <!DOCTYPE html>
+ <html ng-app='myApp'>
+ <head>
+ 	<title>$scope에 대한 이해</title>
+ 	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+ 	<script>
+
+ 		var app = angular.module('myApp', []);
+
+
+ 		app.controller('Parent', function($scope) {
+		 	$scope.x = 5;
+		    	$scope.y = 5;
+		});
+
+		app.controller('Child', function($scope) {
+		 	$scope.modifyBothScopes = function() {
+		 		//상속받은 변수와 더불어 내 변수도 후위증가
+		        	$scope.$parent.x++;
+		   	 };
+		    	$scope.modifyOnlyChildScope = function() {
+		     	   	// 멤버 변수 "y"가 child scope에 생성된다. 따라서 이 경우
+		      	// $scope.$parent.y++ 문장은 parent scope의 y값만을 변경한다.
+		       	$scope.y++;
+		 	   };
+		});
+
+ 	</script>
+ </head>
+ <body >
+ 	<!-- Angular는 html 태그의 중첩으로 상속도 가능합니다! -->
+ 	<div ng-controller="Parent">
+	      parentX = {{x}}<br/>
+	      parentY = {{y}}<br/>
+		<div ng-controller="Child">
+		<!-- parent의 x,y변수를 상속받아 사용-->
+		    childX = {{x}}<br/>
+		    childY = {{y}}<br/>
+		    <!-- chlid 컨트롤러의  modifyBothScopes()함수를 사용 -->
+		    <a style="color: red" ng-click="modifyBothScopes()">ModifyBothScopes</a><br/>
+		    <!-- chlid 컨트롤러의  modifyOnlyChildScope()함수를 사용 -->
+		    <a style="color: blue"  ng-click="modifyOnlyChildScope()">modifyOnlyChildScope</a><br/>
+		</div>
+	</div>
+ </body>
+ </html>
