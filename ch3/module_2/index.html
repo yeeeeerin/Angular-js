@@ -1,0 +1,46 @@
+
+
+<!--
+  1.Module.controller(name, constructor) - 모듈에서 사용되는 컨트롤러를 등록한다.
+  2.Module.factory(name, providerFunction) - 모듈에서 사용되는 서비스를 팩토리 형태로 등록한다.
+  3.Module.service(name, construnctor) - 모듈에서 사용되는 서비스를 등록한다.
+  4.Module.filter(name, filterFactory) - 모듈에서 사용되는 필터를 등록한다.
+  5.Module.run(initializationFn) - 애플리케이션 초기화 함수를 등록한다. 모든 모듈의 등록을 완료했을 때 초기화 함수가 실행된다.
+  6.Module.value(name, object) - 모듈에서 사용되는 객체를 등록한다.
+  7.Module.provider(name, providerType) - 모듈에서 사용되는 서비스를 제공하는 프로바이더를 등록한다.
+  8.Module.config(configFunction) - 모듈이 로딩될 때 호출되면 config 함수에 해당 익명 함수로 서비스를 설정할 수 있다.
+  9.Module.contstant(name, object) - 모듈에서 사용되는 상수를 등록한다.
+  10.Module.directive(name, directiveFactory) - 모듈에서 사용되는 지시자를 등록한다.
+
+
+  모듈의 API를 보면 Angular에서 모듈의 의미를 어느정도 알 수 있다. 간단히 말하면 컨트롤러,서비스,필터,지시자를 담는 그릇정도라 생각하면 됩니다.
+
+-->
+
+<!-- 이번 예제는 위에 있는 api중  서비스에 해당하는 것을 배울거에요 -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>서비스</title>
+
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script> 
+
+	<!-- Modules -->
+	<script src="app.js"></script> 
+</head>
+
+<body>
+      <div ng-app="myApp">
+            <div ng-controller="HelloCtrl">
+           	    	<h1>{{title}}</h1>
+            	<br/>
+                  <button ng-click="addWorldService()">service</button> 
+            </div>
+      </div>
+</body>
+
+</html>

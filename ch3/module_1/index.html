@@ -1,0 +1,35 @@
+
+
+
+
+<!-- 모듈, 컨트롤러와 view(template)를 분리해 봅시다 -->
+<!-- 코딩 순서를 숫자료 표시하겠습니다. -->
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script> <!-- 1 앵귤러 불러오기 -->
+
+	<!-- Modules -->
+	<script src="app.js"></script> <!-- 3. 모듈 ,컨트롤러 불러오기 -->
+	 
+	<!-- Controllers -->
+	
+	 
+	<!-- Services -->
+	<!-- Directives -->
+</head>
+<body ng-app="HelloApp"><!-- 2 앵귤러 어플리케이션 범위지정 -->
+
+	<ul ng-controller="HelloController"> <!-- 4.컨트롤러 설정 -->
+		<li ng-repeat="friend in friends"> <!-- 5. 부가적인 처리  -->
+			안녕 {{ friend }}!
+		</li>
+		<!-- ch1_4예제와 같이 HelloController안에 있는 friends라는 배열을 순회하며 friend를 출력하고 있다. -->
+	</ul>
+
+	
+
+</body>
+</html>
