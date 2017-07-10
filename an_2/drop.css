@@ -1,0 +1,36 @@
+body {
+  color: white;
+  background: rgb(29, 31, 39);
+}
+
+button {
+  pointer: cursor;
+}
+
+input[type=file] {
+	position: absolute;
+
+  width: 500px;
+  height: 500px;
+  background: black;
+ /* background: url('images.png') no-repeat;*/
+  background-image: url('images.png');
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+}
+h1{
+	color: red;
+	position: absolute;
+	top: 600px;
+	z-index: 100;
+}
+.aa{
+	top: 800px;
+}
+.list{
+	position: relative;
+}
+.content{
+	position: relative;
+	top: 600px;
+}
