@@ -1,6 +1,6 @@
 body {
   color: white;
-  background: rgb(29, 31, 39);
+  background: #CECEF6;
 }
 
 button {
@@ -9,14 +9,15 @@ button {
 
 input[type=file] {
 	position: absolute;
+	left: 20%;
 
-  width: 500px;
+  width: 1000px;
   height: 500px;
   background: black;
  /* background: url('images.png') no-repeat;*/
   background-image: url('images.png');
   background-repeat: no-repeat;
-  background-size: 500px 500px;
+  background-size: 1000px 500px;
 }
 h1{
 	color: red;
@@ -34,3 +35,6 @@ h1{
 	position: relative;
 	top: 600px;
 }
+#sortable { list-style-type: none; margin: 0; padding: 0; left: 15%; width: 1200px; }
+#sortable span { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 370px; height: 400px;}
+#sortable span img{}

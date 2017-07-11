@@ -4,7 +4,7 @@ app.run([function () { }]);
 
 app.controller('MainController', ['$scope', function ($scope){
 
-   $scope.index = 2;
+  $scope.index = 2;
 
   $scope.image = null;
   $scope.imageFileName = '';
@@ -28,7 +28,7 @@ app.controller('MainController', ['$scope', function ($scope){
   $scope.addimg = function(event){
 
     $scope.uploadmes.push({
-      src:$scope.uploadme.src, id:$scope.index++
+      src:$scope.uploadmes[$scope.index].src, id:$scope.index++
     });
   };
 
