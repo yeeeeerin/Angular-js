@@ -4,14 +4,13 @@ app.run([function () { }]);
 
 app.controller('MainController', ['$scope', function ($scope){
 
-  $scope.index = 2;
+  $scope.index = 2; //2인이유는 미리 이미지가 2개가 들어가 있으므로
 
   $scope.image = null;
   $scope.imageFileName = '';
   
-  $scope.uploadme = {};
-  $scope.uploadme.src = ''; //uploadme 라는 class에 src변를 추가한 것
 
+//이미지'들'을 달기 위해 배열로 만들어줌
   $scope.uploadmes = [
                           {
                             src:'1.png', id:1
@@ -26,7 +25,7 @@ app.controller('MainController', ['$scope', function ($scope){
 
 
   $scope.addimg = function(event){
-
+//객체에 추가
     $scope.uploadmes.push({
       src:$scope.uploadmes[$scope.index].src, id:$scope.index++
     });
@@ -34,7 +33,7 @@ app.controller('MainController', ['$scope', function ($scope){
 
 }]);
 
-
+//드롭다운 시 이벤트
 app.directive('fileDropzone', function() {
   return {
     restrict: 'A',

@@ -16,6 +16,8 @@
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- 이미지 옮기기 -->
   <script>
       $( function() {
         $( "#sortable" ).sortable();
@@ -41,14 +43,14 @@
 
       
       
-
+<!-- 드롭다운시 이벤트 // uploadmes.src에 저장 onchange (먼), fileread 불리는 순서 유의 -->
     <form ng-submit="addimg()" action>
       <input type="file" fileread="uploadmes[index].src" onchange="angular.element(this).scope().addimg(this)">
       <!--img ng-src="{{ uploadme.src }}"-->
       <div ></div>
      </form>
 
-    <div class="content" id="sortable">
+    <div class="content" id="sortable"> <!-- for문을 통해 저장된 이미지 출력 -->
       <span class="list" ng-repeat="img in uploadmes">
              <img ng-src="{{ img.src }}"  width="350">
         </span>
